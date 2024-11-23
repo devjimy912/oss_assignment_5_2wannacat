@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AddNewPost() {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ function AddNewPost() {
     age: '',
     occupation: '',
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,22 +23,16 @@ function AddNewPost() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       await response.json();
-      alert('Post added successfully!');
-      // Optional: Redirect back to list page after successful post
+      navigate('/'); // 저장 후 리스트 페이지로 돌아가기
     } catch (error) {
-      console.error('Error adding post:', error.message);
+      console.error('Error adding post:', error);
     }
   };
 
   return (
     <div>
-      <h1>Add a New Post</h1>
+      <h2>Add New Post</h2>
       <label>
         Name:
         <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
