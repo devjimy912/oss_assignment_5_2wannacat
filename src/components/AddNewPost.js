@@ -25,7 +25,7 @@ function AddNewPost() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const newPost = await response.json();
+      await response.json();
       alert('Post added successfully!');
       // Optional: Redirect back to list page after successful post
     } catch (error) {
