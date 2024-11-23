@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ShowList from "./components/Pages/ShowList";
+import App from "./App";
 
-const myComponent = <ShowList />;
+const myComponent = <App />;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
