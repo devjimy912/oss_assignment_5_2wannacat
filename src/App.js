@@ -1,17 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ListPage from './components/ListPage';
-import DetailPage from './components/DetailPage';
-import UpdatePage from './components/UpdatePage';
+import ShowList from './ShowList';
+import AddNewPost from './AddNewPost';
+import UpdatePost from './UpdatePost';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ListPage />} />
-        <Route path="/list" element={<ListPage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
-        <Route path="/update/:id" element={<UpdatePage />} />
+        <Route path="/" element={<ShowList />} />
+        <Route path="/add-post" element={<AddNewPost />} />
+        <Route path="/update-post/:postId" element={<UpdatePost />} />
       </Routes>
     </Router>
   );
