@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ShowList from './ShowList';
-import AddNewPost from './AddNewPost';
-import UpdatePost from './UpdatePost';
+import ShowList from './components/ShowList';
+import AddNewPost from './components/AddNewPost';
+import UpdatePost from './components/UpdatePost';
 
 function App() {
   return (
